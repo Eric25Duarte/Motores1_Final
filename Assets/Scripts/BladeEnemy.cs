@@ -23,6 +23,9 @@ public class BladeEnemy : Enemy
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Prevent parent from being destroyed by collisions with blades
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Blade"))
+            return;
         if (collision.gameObject.CompareTag("Player"))
         {
             if (collision.gameObject.TryGetComponent(out IHealth player))
