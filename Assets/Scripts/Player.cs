@@ -1,13 +1,6 @@
 using System;
 using UnityEngine;
 
-public interface IHealth
-{
-    float CurrentHealth { get; }
-    void TakeDamage(float damage);
-    void Heal(float amount);
-}
-
 public class Player : MonoBehaviour, IHealth
 {
     [SerializeField]

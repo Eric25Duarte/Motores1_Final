@@ -22,5 +22,12 @@ public class SlowTrap : Trap
             //enemy.SetSpeed(enemy.BaseSpeed);
         }
     }
+    protected override void NotifyTriggered(Collider2D collider)
+    {
+        RaiseTrapTriggered(collider);
+    }
+	protected void Debuff(Collider2D collider)
+    {
+        RaiseTrapTriggered(collider);
+    }
 }
-

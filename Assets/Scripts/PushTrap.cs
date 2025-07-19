@@ -13,4 +13,12 @@ public class PushTrap : Trap
             rb.AddForce(direction * PushForce, ForceMode2D.Impulse);
         }
     }
+    protected override void NotifyTriggered(Collider2D collider)
+    {
+        RaiseTrapTriggered(collider);
+    }
+	protected void Debuff(Collider2D collider)
+    {
+        RaiseTrapTriggered(collider);
+    }
 }

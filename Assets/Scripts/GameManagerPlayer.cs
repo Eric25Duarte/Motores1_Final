@@ -2,13 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType
-{
-    Blade,
-    Shooter,
-    Explosive
-}
-
 public class GameManagerPlayer : MonoBehaviour
 {
     public Player Player;
