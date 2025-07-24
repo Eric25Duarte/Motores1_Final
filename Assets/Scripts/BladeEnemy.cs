@@ -8,9 +8,10 @@ public class BladeEnemy : Enemy
     
 
     private void Start()
-    {
-	  GameObject localBladesPrefab =Instantiate(bladesPrefab, transform.position, Quaternion.identity);
-	localBladesPrefab.GetComponent<BladeGenerator>().setParent(this.gameObject);
+    { 
+        GameObject localBladesPrefab =Instantiate(bladesPrefab, transform.position, Quaternion.identity);
+	    localBladesPrefab.GetComponent<BladeGenerator>().setParent(this.gameObject);
+        base.Start();
     }
     protected override void Move()
     {
