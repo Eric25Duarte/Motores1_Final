@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8953595829378636868}
   - component: {fileID: 7214704409721400800}
   - component: {fileID: 2145608611943566162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 216643425042149454}
   - component: {fileID: 6232061306225867850}
   - component: {fileID: 3919000888392015305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}

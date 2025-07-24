@@ -4,21 +4,25 @@ public class BladeEnemy : Enemy
 {
     [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private float collisionDamage = 10f;
+    [SerializeField] private GameObject bladesPrefab;
+    
 
+    private void Start()
+    {
+	  GameObject localBladesPrefab =Instantiate(bladesPrefab, transform.position, Quaternion.identity);
+	localBladesPrefab.GetComponent<BladeGenerator>().setParent(this.gameObject);
+    }
     protected override void Move()
     {
-        Debug.Log("BladeEnemy is chasing the player.");
+        UpdateTarget();
+    
     }
 
     private void Update()
     {
+        //base.UpdatePosition();
+        Move();
         base.UpdatePosition();
-        RotateBlades();
-    }
-
-    private void RotateBlades()
-    {
-        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
     }
 
     private void OnCollisionEnter(Collision collision)

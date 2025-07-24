@@ -24,7 +24,7 @@ public class BladeGenerator : MonoBehaviour
             float angleDeg = angle * Mathf.Rad2Deg;
             // Swords point down, so rotate +90 to align 'down' with outward
             Quaternion rotation = Quaternion.Euler(0, 0, angleDeg + 90f);
-            Instantiate(bladePrefab, transform.position + position, rotation);
+            Instantiate(bladePrefab, transform.position + position, rotation, gameObject.transform);
         }
     }
 
