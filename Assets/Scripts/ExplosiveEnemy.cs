@@ -4,13 +4,14 @@ public class ExplosiveEnemy : Enemy
 {
     [SerializeField] private float explosionRadius = 2f;
     [SerializeField] private float explosionDamage = 20f;
+    [SerializeField] private GameObject explosionPrefab;
 
     protected override void Move()
     {
         Debug.Log("ExplosiveEnemy is moving toward the target.");
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Tower"))
         {
@@ -20,15 +21,7 @@ public class ExplosiveEnemy : Enemy
 
     private void Explode()
     {
-        Debug.Log("ExplosiveEnemy exploded!");
-        Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
-        foreach (var hit in hits)
-        {
-            if (hit.TryGetComponent(out IHealth target))
-            {
-                target.TakeDamage(explosionDamage);
-            }
-        }
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
     }

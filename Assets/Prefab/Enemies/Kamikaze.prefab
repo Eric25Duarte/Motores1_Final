@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1272603426582633877}
@@ -47,11 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d4c519abb2e444faf5e130c6ee7be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 2
+  baseSpeed: 1
   health: 50
-  enemyType: 0
+  enemyType: 2
+  targetType: 1
   explosionRadius: 2
   explosionDamage: 20
+  explosionPrefab: {fileID: 1838297439941732210, guid: 3f4d8f65eae405f48b41e6e2213846f6, type: 3}
 --- !u!58 &-6098118215252708607
 CircleCollider2D:
   m_ObjectHideFlags: 0

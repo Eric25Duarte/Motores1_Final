@@ -31,10 +31,12 @@ public class BladeGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (parent != null)
+        if (parent == null)
         {
-            transform.position = parent.transform.position;
+            Destroy(gameObject);
+            return;
         }
+		transform.position = parent.transform.position;
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
     }
 }

@@ -3,11 +3,15 @@ using UnityEngine;
 
 public enum EnemyType { Blade, Shooter, Explosive }
 
+public enum TargetType { Player, Tower }
+
 public abstract class Enemy : MonoBehaviour, IHealth
 {
     [SerializeField] private float baseSpeed = 2f; // Encapsulated field
     [SerializeField] private float health = 50f;  // Encapsulated field
     [SerializeField] private EnemyType enemyType = EnemyType.Blade;
+    [SerializeField] private TargetType targetType = TargetType.Player;
+
 
     protected float CurrentSpeed { get; private set; }
     public float Health => health; // Expose health with read-only access
@@ -43,11 +47,11 @@ public abstract class Enemy : MonoBehaviour, IHealth
 
     public void UpdateTarget()
     {
-        if (Player.Instance != null)
+        if (targetType ==TargetType.Player)
         {
             TargetPosition = Player.Instance.transform.position;
         }
-        else if (Tower.Instance != null)
+        else if (targetType == TargetType.Tower)
         {
             TargetPosition = Tower.Instance.transform.position;
         }

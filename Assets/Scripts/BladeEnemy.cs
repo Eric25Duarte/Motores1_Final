@@ -26,7 +26,8 @@ public class BladeEnemy : Enemy
         base.UpdatePosition();
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OntriggerEnter(Collider collision)
     {
         // Prevent parent from being destroyed by collisions with blades
         if (collision.gameObject.layer == LayerMask.NameToLayer("Blade"))
@@ -37,6 +38,10 @@ public class BladeEnemy : Enemy
             {
                 player.TakeDamage(collisionDamage);
             }
+        }
+		if (collision.gameObject.CompareTag("BulletPlayer"))
+        {
+                Destroy(this.gameObject);
         }
     }
 }
